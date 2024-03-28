@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block na %}添加单个口令{% endblock %}
+{% block main %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <div class="content">
+        <div class="workbench">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="passport">口令：</label>
+                <div class="input_box">
+                    <label>
+                        <input type="text" name="passport">
+                    </label>
+                </div>
+                <label for="amount">金额：</label>
+                <div class="input_box sm">
+                    <select name="amount" id="amount">
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="2000">2000</option>
+                        <option value="3000">3000</option>
+                        <option value="5000">5000</option>
+                    </select>
+                </div>
+                <button id="sbm" type="submit">添加</button>
+            </form>
+        </div>
+        <div class="tips">{{ tips }}</div>
+    </div>
+    <div class="mul">
+        <span style="font-size: 18px; font-weight: 600;">批量添加口令</span>
+        <hr>
+        <div class="detail">
+            <h6>要求：</h6>
+            <div class="ps">
+                <h6>上传文件必须是txt格式，文件名随意</h6><br>
+                <h6>文件内容格式：口令-金额</h6><br>
+                <h6>例：123456李100-100</h6>
+            </div>
+        </div>
+        <form action="/mul_add/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="upload_file" id="file_id" accept=".txt">
+            <input type="submit" id="sbm" value="上传">
+        </form>
+    </div>
+    <div class="tips">{{ tips1 }}</div>
+    <script>
+    {% if messages %}
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+    {% endif %}
+    </script>
+{% endblock %}

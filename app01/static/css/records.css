@@ -1,0 +1,131 @@
+.menu ul li:nth-child(5) a {
+    background: rgba(255, 255, 255, .3);
+}
+
+.record_by_date {
+    margin-top: 22px;
+}
+
+.record_by_date table {
+    margin-top: 16px;
+}
+
+#tb {
+    display: block;
+    max-height: 360px;
+    overflow-y: scroll;
+}
+
+.record_by_date table thead,
+.record_by_date tbody tr {
+    display: table;
+    width: 99%;
+    table-layout: fixed;
+}
+
+.record_by_date table thead {
+    width: 97.3%;
+}
+
+.record_by_date hr {
+    margin-bottom: 12px;
+}
+
+#record_date {
+    outline: none;
+    font-size: 16px;
+    width: 120px;
+    height: 25px;
+}
+
+#date_sbm {
+    cursor: pointer;
+    width: 64px;
+    height: 28px;
+    margin-left: 8px;
+}
+
+#date_sbm span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/search.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+#wc-l {
+    margin-left: 8px;
+    cursor: default;
+}
+
+#export {
+    padding-right: 8px;
+    cursor: pointer;
+    text-align: right;
+    line-height: 28px;
+    float: right;
+    margin-right: 24px;
+    font-size: 14px;
+    display: inline-block;
+    width: 86px;
+    height: 28px;
+    border: 1px solid #606060;
+    border-radius: 3px;
+    background: #eee;
+}
+
+#export span {
+    display: inline-block;
+    width: 30px;
+    height: 19px;
+    margin-right: -7px;
+    margin-top: -1px;
+    vertical-align: middle;
+    background-image: url('../img/export.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+}
+
+.search_user_record {
+    margin: 10px 0 12px 10px;
+
+}
+
+.search_user_record input {
+    font-size: 16px;
+    width: 160px;
+    height: 22px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 4px 4px;
+    border-radius: 3px;
+}
+
+.search_user_record #search_record_button {
+    cursor: pointer;
+    width: 64px;
+    height: 28px;
+    margin-left: 8px;
+}
+
+#search_record_button span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/search.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.mintitle {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.search_back {
+    margin-bottom: 16px;
+    display: none;
+}
+

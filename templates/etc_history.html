@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block na %}充值记录{% endblock %}
+{% block main %}
+    <link rel="stylesheet" href="{% static 'css/history.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <div class="search_user_recharge">
+        <span>永久ID：</span>
+        <input type="text" id="search_recharge">
+        <button type="button" id="search_recharge_button">
+            <span></span>
+            搜索
+        </button>
+    </div>
+    <div class="content search_back">
+    <input type="hidden" value="{{ csrf_token }}" class="csrfmiddlewaretoken">
+        <table>
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>永久ID</th>
+                <th>订单号</th>
+                <th>充值金额CNY</th>
+                <th>实际付款金额USDT</th>
+                <th>收款地址</th>
+                <th>充值时间</th>
+            </tr>
+            </thead>
+            <tbody id="tb0"></tbody>
+        </table>
+    </div>
+    <div class="content">
+        <table>
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>永久ID</th>
+                <th>订单号</th>
+                <th>充值金额CNY</th>
+                <th>实际付款金额USDT</th>
+                <th>收款地址</th>
+                <th>充值时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for per in all_etc_history %}
+                <tr>
+                    <td>{{ per.id }}</td>
+                    <td>{{ per.user }}</td>
+                    <td>{{ per.trade_id }}</td>
+                    <td>{{ per.amount }}</td>
+                    <td>{{ per.actual_amount }}</td>
+                    <td>{{ per.address }}</td>
+                    <td>{{ per.time }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="8">
+                    第{{ now_page }}页，
+                    页码：
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for page in page_num %}
+                            <button type="submit" value="{{ page }}" name="page">{{ page }}</button>
+                        {% endfor %}
+                    </form>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script src="{% static 'js/recharge.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>控制台</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+</head>
+<body>
+<div class="topbar">
+    <div class="left">
+        <h3>口令管理系统</h3>
+    </div>
+    <div class="right">
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="/console/passmng">口令管理</a>
+                </li>
+                <li>
+                    <a href="/console/redeemed">已兑换口令</a>
+                </li>
+                <li>
+                    <a href="/console/add">添加口令</a>
+                </li>
+                <li>
+                    <a href="/console/usermanage">用户管理</a>
+                </li>
+                <li>
+                    <a href="/console/records">兑换记录</a>
+                </li>
+                <li>
+                    <a href="/console/etc_history/">充值记录</a>
+                </li>
+            </ul>
+        </div>
+        <div class="user">
+            <span id="userinfo">用户：{{ username }}</span>
+            <span id="logout">
+                <a href="/logout/">退出登录</a>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <span style="font-size: 18px; font-weight: 600;">{% block na %}{% endblock %}</span>
+    <hr>
+    {% block main %}{% endblock %}
+</div>
+<div class="window">
+    <div class="close"></div>
+    <div class="content_info">
+        <form action="/edit/" method="post">
+            <div class="pos">
+                {% csrf_token %}
+                <label for="id">编号：</label>
+                <div class="input_box">
+                    <input type="text" readonly="readonly" id="id" name="id">
+                </div>
+                <br>
+                <label for="passport">口令：</label>
+                <div class="input_box">
+                    <input type="text" id="passport" name="passport">
+                </div>
+                <br>
+                <label for="amount">金额：</label>
+                <div class="input_box">
+                    <select name="amount" id="amount">
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="500">500</option>
+                        <option value="1000">1000</option>
+                        <option value="2000">2000</option>
+                        <option value="3000">3000</option>
+                        <option value="5000">5000</option>
+                    </select></div>
+                <br>
+                <label for="status">状态：</label>
+                <div class="input_box">
+                    <select name="status" id="status">
+                        <option value="可用">可用</option>
+                        <option value="已使用">已使用</option>
+                    </select>
+                </div>
+                <button type="submit">提交修改</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="{% static 'js/index.js' %}"></script>
+</html>

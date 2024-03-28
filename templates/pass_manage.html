@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block na %}口令管理{% endblock %}
+{% block main %}
+    <link rel="stylesheet" href="{% static 'css/passmng.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <div class="content">
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="select_all">
+                </th>
+                <th>编号</th>
+                <th>口令</th>
+                <th>金额</th>
+                <th>上架时间</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for passport in passports %}
+                <tr>
+                    <td>
+                        <input type="checkbox" class="select" value="{{ passport.id }}">
+                    </td>
+                    <td width="50px">{{ passport.id }}</td>
+                    <td>{{ passport.passport }}</td>
+                    <td style="font-weight: 600;">{{ passport.amount }}</td>
+                    <td width="210px">{{ passport.date }}</td>
+                    <td class="status">{{ passport.status.strip }}</td>
+                    <td width="140px">
+                        <button type="button" class="edt"
+                                value="{&quot;id&quot;:&quot;{{ passport.id }}&quot;,&quot;passport&quot;:&quot;{{ passport.passport }}&quot;,&quot;amount&quot;:&quot;{{ passport.amount }}&quot;,&quot;date&quot;:&quot;{{ passport.date }}&quot;,&quot;status&quot;:&quot;{{ passport.status.strip }}&quot;}"
+                                name="edit">编辑
+                        </button>
+                        <form action="/delete/" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="del" value="{{ passport.id }}" name="deleteID">删除</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    第{{ now_page }}页，
+                    页码：
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for page in page_num %}
+                            <button type="submit" value="{{ page }}" name="page">{{ page }}</button>
+                        {% endfor %}
+                    </form>
+                </td>
+                <td class="delete_all">
+                    <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+                    <button type="button" class="delete_all_button">批量删除</button>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

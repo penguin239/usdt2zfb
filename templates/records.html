@@ -1,0 +1,107 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block na %}兑换记录搜索{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/records.css' %}">
+    <div class="search_user_record">
+        <span>永久ID：</span>
+        <input type="text" id="search_record">
+        <button type="button" id="search_record_button">
+            <span></span>
+            搜索
+        </button>
+    </div>
+    <div class="content search_back">
+        <table>
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>永久ID</th>
+                <th>用户名</th>
+                <th>金额</th>
+                <th>兑换时间</th>
+                <th>口令</th>
+            </tr>
+            </thead>
+            <tbody id="tb0"></tbody>
+        </table>
+    </div>
+    <span class="mintitle">用户管理</span>
+    <hr>
+    <div class="content">
+        <table>
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>永久ID</th>
+                <th>口令</th>
+                <th>金额</th>
+                <th>兑换时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for record in all_record %}
+                <tr>
+                    <td>{{ record.id }}</td>
+                    <td>{{ record.username }}</td>
+                    <td>{{ record.uid }}</td>
+                    <td>{{ record.passport }}</td>
+                    <td>{{ record.amount }}</td>
+                    <td>{{ record.exchange_time }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    第{{ now_page }}页，
+                    页码：
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for page in page_num %}
+                            <button type="submit" value="{{ page }}" name="page">{{ page }}</button>
+                        {% endfor %}
+                    </form>
+                </td>
+
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="content record_by_date">
+        <span style="font-size: 18px;font-weight: 600;">按日期查询兑换记录</span>
+        <hr>
+        <div class="record_by_date_content">
+            <span>日期：</span>
+            <input type="hidden" value="{{ csrf_token }}" class="csrfmiddlewaretoken">
+            <input type="date" id="record_date">
+            <button id="date_sbm">
+                <span></span>
+                查询
+            </button>
+            <span id="wc-l"></span>
+            <span id="export">
+                <span></span>
+                导出本页
+            </span>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>永久ID</th>
+                <th>口令</th>
+                <th>金额</th>
+                <th>兑换时间</th>
+            </tr>
+            </thead>
+            <tbody id="tb"></tbody>
+        </table>
+    </div>
+    <script src="{% static 'js/records.js' %}"></script>
+{% endblock %}

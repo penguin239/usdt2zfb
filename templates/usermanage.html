@@ -1,0 +1,142 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block na %}用户搜索{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static 'css/usermanage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tables.css' %}">
+    <div class="search_user">
+        <div class="search_block">
+            <div class="search_one">
+                <span>永久ID：</span>
+                <input type="text" id="search_bar">
+                <button type="button" id="search_button">
+                    <span></span>搜索
+                </button>
+            </div>
+            <div class="user_info_display">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>用户名</th>
+                        <th>永久ID</th>
+                        <th>余额</th>
+                        <th>注册时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="personal_id"></td>
+                        <td id="personal_username"></td>
+                        <td id="personal_uid" style="color: #f40"></td>
+                        <td id="personal_balance"></td>
+                        <td id="register_date"></td>
+                        <td style="width: 140px">
+                            <button type="button" value="" class="etc personal_etc"
+                                    name="user_info">
+                                充值
+                            </button>
+                            <button type="button" class="de personal_etc" value=""
+                                    style="background: #c4b323">扣款
+                            </button>
+                            <button type="button" value="{{ user.uid }}" class="del delete_personal search_one_del"
+                                    name="del_user">删除
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <span class="mintitle">用户管理</span>
+        <hr>
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="select_all">
+                </th>
+                <th>编号</th>
+                <th>用户名</th>
+                <th>永久ID</th>
+                <th>余额</th>
+                <th>注册时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in all_user %}
+                <tr>
+                    <td>
+                        <input type="checkbox" class="select" value="{{ user.id }}">
+                    </td>
+                    <td>{{ user.id }}</td>
+                    <td style="color: black">{{ user.username }}</td>
+                    <td style="color: #f40">{{ user.uid }}</td>
+                    <td>{{ user.balance }}</td>
+                    <td style="width: 240px;">{{ user.register_date }}</td>
+                    <td style="width: 160px">
+                        <button type="button" value="{{ user.username }},{{ user.uid }},{{ user.balance }}" class="etc"
+                                name="user_info">
+                            充值
+                        </button>
+                        <button type="button" class="de" value="{{ user.username }},{{ user.uid }},{{ user.balance }}"
+                                style="background: #c4b323">扣款
+                        </button>
+                        <button type="button" value="{{ user.uid }}" class="del delete_personal" name="del_user">删除
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    第{{ now_page }}页，
+                    页码：
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {% for page in page_num %}
+                            <button type="submit" value="{{ page }}" name="page">{{ page }}</button>
+                        {% endfor %}
+                    </form>
+                </td>
+                <td class="delete_all">
+                    <input type="hidden" id="csrf_token" value="{{ csrf_token }}">
+                    <button type="button" class="delete_all_user">批量删除用户</button>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div class="info_box">
+        <div class="close"></div>
+        <div class="content">
+            <div>用户名：<span id="username"></span></div>
+            <div>编号：<span id="uid"></span></div>
+            <div>余额：<span id="balance"></span></div>
+            <div>充值数量：
+                <input type="number" class="etc_num">
+            </div>
+            <button type="button" id="sbm_etc">确认</button>
+        </div>
+    </div>
+    <div class="info_box_del">
+        <div class="close"></div>
+        <div class="content">
+            <div>用户名：<span id="username0"></span></div>
+            <div>编号：<span id="uid0"></span></div>
+            <div>余额：<span id="balance0"></span></div>
+            <div>扣款金额：
+                <input type="number" class="de_num">
+            </div>
+            <button type="button" id="sbm_de">确认</button>
+        </div>
+    </div>
+    <script src="{% static 'js/usermanage.js' %}"></script>
+{% endblock %}

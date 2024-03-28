@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f1f1f1;
+    min-width: 1034px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    cursor: default;
+    display: flex;
+    background: #59c2a0;
+    width: 100%;
+    padding: 15px 0 15px 0;
+}
+
+.left {
+    display: flex;
+    color: #272733;
+    margin-left: 5.25rem;
+    flex: 3;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
+.right {
+    margin-right: 5.25rem;
+    flex: 7;
+}
+
+.right ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.right ul li a {
+    color: #272733;
+    display: block;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.right ul li a:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.menu {
+    display: inline-block;
+}
+
+.user {
+    margin-left: 30px;
+    display: inline-block;
+}
+
+#userinfo {
+    padding: 6px;
+}
+
+#logout a {
+    font-size: 12px;
+    color: #272733;
+}
+
+.main {
+    width: 920px;
+    background: white;
+    padding: 0.6rem 1rem;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 15%);
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin: 36px auto 50px;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #e1e1e1;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+}
+
+.edt, .del {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    font-size: 13px;
+    color: #fff;
+    line-height: 22px;
+}
+
+.edt {
+    background-color: #3e963e;
+}
+
+.del {
+    background-color: #e34a4a;
+}
+
+.window, .info_box, .info_box_del {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -240px;
+    transform: translateY(-50%);
+    width: 480px;
+    height: 300px;
+    background: white;
+    padding: 0.6rem 1rem;
+    box-shadow: 0 5px 12px rgb(0 0 0 / 35%);
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 23px;
+    border-radius: 3px;
+    background: url('../img/icon_3_tiny.jpg') -222px -126px no-repeat;
+}
+
+.window .close:hover {
+    box-shadow: 0 1px 1px rgb(0 0 0 / 15%);
+}
+
+.content_info table th, td {
+    border: 1px solid #000;
+}
+
+.window input, select {
+    width: 180px;
+    outline: none;
+    border: none;
+}
+
+.window select {
+    width: 185px;
+}
+
+.window .input_box {
+    width: 180px;
+    margin-top: 20px;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.56);
+    padding: 1px 6px;
+    border-radius: 2px;
+}
+
+.window button {
+    float: right;
+    overflow: hidden;
+    margin-top: 15px;
+    display: block;
+    width: 70px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.window .pos {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.delete_all {
+    position: relative;
+}
+
+.delete_all_button, .delete_all_user {
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #e34a4a;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #fff;
+    width: 70px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    margin-left: -30px;
+}
+
+.status {
+    font-weight: 600;
+}

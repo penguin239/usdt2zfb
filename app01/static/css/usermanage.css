@@ -1,0 +1,129 @@
+.menu ul li:nth-child(4) a {
+    background: rgba(255, 255, 255, .3);
+}
+
+.content {
+    margin-top: 16px;
+}
+
+.etc, .de {
+    background-color: #3e963e;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    font-size: 13px;
+    color: #fff;
+    line-height: 22px;
+}
+
+.delete_all_user {
+    width: 86px;
+    margin-left: -43px;
+}
+
+.mintitle {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.search_block {
+    margin-bottom: 12px;
+    /*background: rgba(238, 238, 238, 0.32);*/
+}
+
+.etc_num, .de_num {
+    font-size: 18px;
+    display: inline-block;
+    width: 160px;
+    height: 22px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 4px 4px;
+}
+
+.info_box .content,.info_box_del .content {
+    position: absolute;
+    width: 300px;
+    top: 46%;
+    left: 50%;
+    margin-left: -130px;
+    transform: translateY(-50%);
+
+}
+
+.info_box .content div, .info_box_del .content div {
+    margin-top: 10px;
+}
+
+#sbm_etc, #sbm_de {
+    cursor: pointer;
+    width: 64px;
+    height: 32px;
+    float: right;
+    margin-top: 16px;
+}
+
+#search_bar {
+    font-size: 16px;
+    width: 160px;
+    height: 22px;
+    border: 1px solid #ccc;
+    outline: none;
+    padding: 4px 4px;
+    border-radius: 3px;
+}
+
+#search_button {
+    cursor: pointer;
+    width: 64px;
+    height: 28px;
+    margin-left: 8px;
+}
+
+#search_button span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/search.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+.search_one {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.user_info_display {
+    display: none;
+    margin-top: 16px;
+}
+
+.user_info_display table {
+    width: 100%;
+    border-collapse: collapse;
+    cursor: default;
+}
+
+.user_info_display table thead {
+    background-color: #008c8c;
+    color: #fff;
+}
+
+.user_info_display table td {
+    background-color: #eee;
+}
+
+.user_info_display table tbody tr:hover td{
+    background-color: #ccc;
+}
+
+.user_info_display table th, td {
+    border: 1px solid #999;
+    text-align: center;
+    padding: 4px 0;
+}

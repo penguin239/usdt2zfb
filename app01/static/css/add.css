@@ -1,0 +1,69 @@
+.menu ul li:nth-child(3) a {
+    background: rgba(255, 255, 255, .3);
+}
+
+.workbench {
+    width: 100%;
+    background: rgba(238, 238, 238, 0.32);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.content input,select {
+    outline: none;
+    border: none;
+    height: 24px;
+    font-size: 16px;
+}
+
+.content .input_box {
+    line-height: 30px;
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #000000;
+    padding: 0 6px 3px 6px;
+    margin-right: 16px;
+    border-radius: 3px;
+}
+
+.content .sm {
+    width: 180px;
+}
+
+.content #sbm {
+    height: 30px;
+    width: 60px;
+}
+
+.tips {
+    font-size: 14px;
+    color: #e34a4a;
+}
+
+.mul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.detail p {
+    font-size: 14px;
+}
+
+.detail h6 {
+    display: inline-block;
+}
+
+.detail .ps {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 16px;
+}
+
+.detail .ps h6 {
+    font-weight: 400;
+}
+
+.mul #sbm {
+    width: 40px;
+}
