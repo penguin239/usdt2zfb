@@ -297,11 +297,11 @@ async def handler(event):
 \ud83d\udfe2**USDT兑换TRX**\ud83d\udd34
 **往\ud83d\udd3b下方地址转USDT,会5秒内自动回你TRX**
 **点击地址自动复制【汇率1U=8.4651T】**
-`TWQmKJUqBv7HKTns5DJ8QeSzPKUWVhDDDD`
+``
 
 **往\ud83d\udd3b下方地址转TRX,会5秒内自动回你能量**
 **TRX能量兑换地址：【点击地址自动复制】**
-`TLYC79wMyHyWeU1G6GbLjbUDNjBqCtFFnn`
+``
 
 1.8TRX=33000能量，时效1小时
 3.6TRX=66000能量，针对没有u的地址，时效1小时
