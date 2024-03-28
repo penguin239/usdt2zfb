@@ -14,7 +14,7 @@ Automatically convert usdt to Alipay red packet
 
 ## 配置
 您只需要在```settings.py```中按指示添加内容即可。\
-交易用到了epusdt，您需要熟悉epusdt的搭建。\
+交易用到了epusdt，您需要熟悉epusdt的搭建。
 
 epusdt项目地址：https://github.com/assimon/epusdt
 
