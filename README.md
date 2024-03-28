@@ -1,5 +1,6 @@
 # usdt2zfb
 Automatically convert usdt to Alipay red packet
+use: django telethon epusdt
 
 ## 应用
 您可以通过本项目方便的构造一个交易平台\
