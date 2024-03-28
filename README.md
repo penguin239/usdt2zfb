@@ -3,7 +3,7 @@ Automatically convert usdt to Alipay red packet
 
 ## 应用
 您可以通过本项目方便的构造一个交易平台\
-内置了Telegram机器人，可以轻松对接Telegram\
+内置了Telegram机器人，可以轻松对接Telegram
 
 ## web管理端
 拥有简介强大的web管理端，可监控用户账户，兑换记录，过期时间，以及导出所有数据。
