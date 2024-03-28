@@ -1,23 +1,23 @@
 from telethon import Button
 
 # debug
-api_id = 27557835
-api_hash = '3f3159bfd18b577c588502b63ca1d675'
-bot_token = '6478775201:AAHETrhyE16rHRY8zyxbMbzhrkhzhtF9rfk'
+api_id = 0
+api_hash = ''
+bot_token = ''
 
 # release
-# api_id = 25409510
-# api_hash = '499c125b3b81278538c98025c1032ade'
-# bot_token = '6915400125:AAGTchlzfSl-hRXiehXrXZsempju2LbPynA'
+# api_id = 0
+# api_hash = ''
+# bot_token = ''
 
 # 异步回调地址
 notify_url = 'http://127.0.0.1:8668/pay_notice'
 # 支付成功重定向地址
 redirect_url = 'http://127.0.0.1:8668/pay_notice'
 # api请求token
-api_auth_token = 'test666'
+api_auth_token = 'token'
 
-# proxy
+# 是否启用代理
 proxy_on = True
 proxy = {
     'proxy_type': 'socks5',
@@ -27,7 +27,7 @@ proxy = {
 
 # database
 host = '127.0.0.1'
-database = 'zfb'
+database = 'db'
 port = 3306
 username = 'root'
 password = 'root'
@@ -36,8 +36,8 @@ user_table = 'user'
 records_table = 'records'
 recharge_records_table = 'recharge_records'
 
-channel_url = 'https://t.me/+5jJp5OQrS-45YjZl'
-consultant_url = 'https://t.me/chinaLeijun'
+channel_url = ''
+consultant_url = ''
 
 # 欢迎语
 hello = f'''
@@ -48,8 +48,8 @@ hello = f'''
 \u267b\ufe0f TRX、能量，自动兑换
 \ud83d\udcb0 充U智能上账，无需等待
 
-\ud83e\udd70 售后客服：@KFnana1729
-\ud83d\udd75\ud83c\udffb\u200d\u2640\ufe0f 商业合作请联系： @chinaLeijun
+\ud83e\udd70 售后客服：
+\ud83d\udd75\ud83c\udffb\u200d\u2640\ufe0f 商业合作请联系：
 '''
 hello_button = [
     [Button.inline('口令兑换', b'exchange'), Button.inline('扫码代付', b'scan')],
