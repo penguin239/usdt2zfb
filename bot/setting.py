@@ -11,9 +11,9 @@ bot_token = ''
 # bot_token = ''
 
 # 异步回调地址
-notify_url = 'http://127.0.0.1:8668/pay_notice'
+notify_url = '支付成功后的回调地址'
 # 支付成功重定向地址
-redirect_url = 'http://127.0.0.1:8668/pay_notice'
+redirect_url = '支付成功后的跳转地址'
 # api请求token
 api_auth_token = 'token'
 
@@ -42,14 +42,6 @@ consultant_url = ''
 # 欢迎语
 hello = f'''
 \ud83e\udde7 支付宝口令兑换
-✅ 微信支付宝扫码代付
-\ud83d\udcf1 票务、民宿、话费
-\ud83c\udf10 24小时高效秒出
-\u267b\ufe0f TRX、能量，自动兑换
-\ud83d\udcb0 充U智能上账，无需等待
-
-\ud83e\udd70 售后客服：
-\ud83d\udd75\ud83c\udffb\u200d\u2640\ufe0f 商业合作请联系：
 '''
 hello_button = [
     [Button.inline('口令兑换', b'exchange'), Button.inline('扫码代付', b'scan')],
